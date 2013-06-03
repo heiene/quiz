@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>main.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(188,148,88); font-style: italic; }
+.s1 { color: rgb(230,225,220); }
+.s2 { color: rgb(204,120,51); }
+.s3 { color: rgb(165,194,97); }
+.s4 { color: rgb(204,120,50); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+main.js</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="s0">/**</span><span class="s1"> 
+<a name="l2"> </span><span class="s0">* Created with JetBrains WebStorm.</span><span class="s1"> 
+<a name="l3"> </span><span class="s0">* User: rykket</span><span class="s1"> 
+<a name="l4"> </span><span class="s0">* Date: 5/29/13</span><span class="s1"> 
+<a name="l5"> </span><span class="s0">* Time: 5:22 PM</span><span class="s1"> 
+<a name="l6"> </span><span class="s0">* To change this template use File | Settings | File Templates.</span><span class="s1"> 
+<a name="l7"> </span><span class="s0">*/</span><span class="s1"> 
+<a name="l8">$(document).ready(</span><span class="s2">function </span><span class="s1">() { 
+<a name="l9">    $(</span><span class="s3">&quot;p&quot;</span><span class="s1">).text(</span><span class="s3">&quot;The DOM is now loaded and can be manipulated.&quot;</span><span class="s1">)</span><span class="s4">;</span><span class="s1"> 
+<a name="l10"> 
+<a name="l11">    </span><span class="s2">var </span><span class="s1">correctAnswers </span><span class="s2">= </span><span class="s3">0</span><span class="s4">;</span><span class="s1"> 
+<a name="l12">    </span><span class="s2">var </span><span class="s1">whichQuestion </span><span class="s2">= </span><span class="s3">0</span><span class="s4">;</span><span class="s1"> 
+<a name="l13">    </span><span class="s2">var </span><span class="s1">allQuestions </span><span class="s2">=</span><span class="s1"> 
+<a name="l14">        [{Question</span><span class="s2">: </span><span class="s3">&quot;Who let the dogs out&quot;</span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">&quot;you&quot;</span><span class="s4">, </span><span class="s3">&quot;me&quot;</span><span class="s4">, </span><span class="s3">&quot;santa claus&quot;</span><span class="s4">, </span><span class="s3">&quot;dog wisperer&quot;</span><span class="s1">]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">3 </span><span class="s1">}</span><span class="s4">,</span><span class="s1"> 
+<a name="l15">        {Question</span><span class="s2">: </span><span class="s3">&quot;Kven kan segla for uten vind&quot; </span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">&quot;du&quot;</span><span class="s4">,</span><span class="s3">&quot;eg&quot;</span><span class="s4">,</span><span class="s3">&quot;ho&quot;</span><span class="s4">, </span><span class="s3">&quot;he&quot;</span><span class="s4">, </span><span class="s3">&quot;hon&quot;</span><span class="s1">]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">1 </span><span class="s1">}</span><span class="s4">,</span><span class="s1"> 
+<a name="l16">        {Question</span><span class="s2">: </span><span class="s3">&quot;Hva er kvadratroten av Pi^2&quot; </span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">3.14</span><span class="s4">, </span><span class="s3">5</span><span class="s4">, </span><span class="s1">Math.pi()]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">2 </span><span class="s1">}</span><span class="s4">,</span><span class="s1"> 
+<a name="l17">        {Question</span><span class="s2">: </span><span class="s3">&quot;Hvor er alle helter hen?&quot; </span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">&quot;hos jan eggum&quot;</span><span class="s4">, </span><span class="s3">&quot;staatt opp igjen?&quot;</span><span class="s4">, </span><span class="s3">&quot;paa kino&quot;</span><span class="s1">]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">2 </span><span class="s1">}</span><span class="s4">,</span><span class="s1"> 
+<a name="l18">        {Question</span><span class="s2">: </span><span class="s3">&quot;Hva skjer a&quot; </span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">&quot;tingelign&quot;</span><span class="s4">, </span><span class="s3">&quot;bagera&quot;</span><span class="s4">,</span><span class="s3">&quot;yo&quot;</span><span class="s4">, </span><span class="s3">&quot;baloo&quot;</span><span class="s1">]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">1 </span><span class="s1">}</span><span class="s4">,</span><span class="s1"> 
+<a name="l19">        {Question</span><span class="s2">: </span><span class="s3">&quot;Why oh why didn't i take the blue pill?&quot; </span><span class="s4">, </span><span class="s1">alternatives</span><span class="s2">: </span><span class="s1">[</span><span class="s3">&quot;to see the rabbit hole&quot;</span><span class="s4">,</span><span class="s3">&quot;good question&quot;</span><span class="s4">, </span><span class="s3">&quot;nobody knows&quot;</span><span class="s1">]</span><span class="s4">,</span><span class="s1">correctAnswer</span><span class="s2">:</span><span class="s3">0 </span><span class="s1">}]</span><span class="s4">;</span><span class="s1"> 
+<a name="l20">    </span><span class="s2">var </span><span class="s1">numberOfQuestions </span><span class="s2">= </span><span class="s1">allQuestions.length</span><span class="s4">;</span><span class="s1"> 
+<a name="l21">    alert(numberOfQuestions) 
+<a name="l22"> 
+<a name="l23"> 
+<a name="l24"> 
+<a name="l25">    $(</span><span class="s3">'#startButton'</span><span class="s1">).on(</span><span class="s3">'click'</span><span class="s4">, </span><span class="s2">function </span><span class="s1">displayNextQuestion() { 
+<a name="l26">        alert(</span><span class="s3">'skjer det noe'</span><span class="s1">)</span><span class="s4">;</span><span class="s1"> 
+<a name="l27">        </span><span class="s2">var </span><span class="s1">question </span><span class="s2">= </span><span class="s1">allQuestions[whichQuestion]</span><span class="s4">;</span><span class="s1"> 
+<a name="l28">        $(</span><span class="s3">'.question'</span><span class="s1">).append(question.Question)</span><span class="s4">;</span><span class="s1"> 
+<a name="l29">        whichQuestion</span><span class="s2">++</span><span class="s4">;</span><span class="s1"> 
+<a name="l30">    })</span><span class="s4">;</span><span class="s1"> 
+<a name="l31"> 
+<a name="l32"> 
+<a name="l33"> 
+<a name="l34"> 
+<a name="l35">})</span><span class="s4">;</span></pre>
+</body>
+</html>

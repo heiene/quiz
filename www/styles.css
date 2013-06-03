@@ -1,0 +1,25 @@
+.question {
+    list-style-type: none;
+    border: dashed 1px #116e78;
+    background: #9bcded;
+    border-radius: 5px;
+    float: left;
+    width: 50%;
+    opacity: 0;
+}
+
+.alternative {
+    color: red;
+}
+.button {
+    opacity: 0;
+}
+.answer {
+    color: #ffc54a;
+    background: #5880ed;
+    border-radius: 5px;
+    border-radius: 5px;
+    float: left;
+    width: 50%;
+    height: 100px;
+}
